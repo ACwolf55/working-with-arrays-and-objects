@@ -51,8 +51,16 @@ var employees = [
 */
 
 //Code Here
-
-
+function employeeUpdater() {
+  employees.forEach(function(element,index){
+    if (element.firstName === 'Theo')
+      {employees.splice(index,1)}
+    else if(element.firstName === 'Lorie')
+      {element.department = 'HR'}
+   
+ });
+ return employees
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -69,6 +77,12 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+function removeDuplicates (){
+  let updated = workplaceAccidents.filter((el, index) => {
+    return workplaceAccidents.indexOf(el) === index;
+})
+return updated
+}
 
 
 
@@ -97,8 +111,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -139,7 +153,12 @@ var myCar = {
 */
 
 //Code Here
-
+function recordCleaner(){
+  myCar.accidents.forEach((element)=>{
+    if (element.atFaultForAccident===true)
+      {element.atFaultForAccident = false}
+  })
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -159,4 +178,15 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 //Code Here
 
-
+function looper (){
+  for(let i=0;i<numsArr.length;i++){ 
+    for(let j=0;j<numsArr[i].length;j++){
+      if(j%2!==0){
+        numsArr[i].splice(j,1,'even')
+      }
+      else{numsArr[i].splice(j,1,'odd')}
+    }
+  }
+  return numsArr
+ }
+    
